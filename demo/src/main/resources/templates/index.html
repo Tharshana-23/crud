@@ -1,0 +1,16 @@
+
+<html xmlns:th="https://thymleaf.org">
+<head>
+
+<title> index page</title>
+</head>
+<body>
+<h1 class="container" > This is Index page</h1>
+<h1 th:text="${message}"></h1>
+<table>
+<tr th:each="task:${letters}">
+<td th:text="${task}"/> 
+</tr>
+</table>
+</body>
+</html>

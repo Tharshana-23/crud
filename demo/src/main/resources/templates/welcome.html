@@ -1,0 +1,15 @@
+<html xmlns:th="https://thymleaf.org">
+<head>
+<title> welcome puppy's world</title>
+</head>
+<body>
+<h1>Hi Puppy</h1>
+<h1 th:text="${puppy +'Tharshana'}"> </h1>
+<table>
+<tr th:each="task:${letter}">
+<td th:text="${task}"/>
+</tr>
+
+</table>
+</body>
+</html>

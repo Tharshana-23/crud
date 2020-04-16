@@ -1,0 +1,45 @@
+<html xmlns:th="https://thymeleaf.org">
+<head>
+</head>
+
+<body>
+
+	  <h1>This is addpage</h1>
+	<div th:switch="${dog}">
+	<h2 th:case="null">No Dogs Register yet</h2>
+	<div th:case="*">
+	<h2>Dogs</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				
+				<th>Delete</th>
+				<th>Edit</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			 <tr th:each="dg:${dog}">
+				<td th:text="${dg.id}"></td>
+				<td th:text="${dg.name}"></td>
+				<td th:text="${dg.email}"></td>
+				
+				<td ><a th:href="@{/delete/{id} (id=${dg.id})}">Delete </a></td>
+				<td > <a th:href="@{/edit/{id} (id=${dg.id})}">Edit</a> </td>
+				
+			</tr> 
+		</tbody>
+	</table>
+	</div>
+	</div>
+	<a href="/signup">Add new Dog</a>
+</body>
+
+
+
+
+
+</html>
